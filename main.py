@@ -9,7 +9,7 @@ import random
 #для видео
 import cv2
 #для аудио
-import pygame
+
 
 
 root = tk.Tk()
@@ -54,6 +54,20 @@ def open_new_window():
     можно начать заново, выйти из игры или поставить на паузу.
 
         Подробнее:
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
         """ )
     text.tag_config("red", foreground="red")
     text.tag_config("gray_background", background="gray9")
@@ -127,7 +141,6 @@ class VideoPlayer:
     def __init__(self, window, video_source=0, video_file=None, audio_file=None):
         self.window = window
 
-
         self.video_source = video_source
         self.video_file = video_file
 
@@ -139,11 +152,6 @@ class VideoPlayer:
         self.canvas = tk.Canvas(window, width=self.vid.get(cv2.CAP_PROP_FRAME_WIDTH),
                                 height=self.vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
         self.canvas.pack()
-
-        self.audio_file = audio_file
-
-        # Инициализируем Pygame
-        pygame.init()
 
         # Добавляем кнопки управления
         self.btn_forward = tk.Button(self.window, text="          Пропустить          ", font=("Courier New", 15), bg="black", fg="red", command=self.skip_forward)
@@ -163,33 +171,25 @@ class VideoPlayer:
             # После завершения видео добавляем кнопку выхода
             if not hasattr(self, 'btn_exit'):
                 self.btn_exit = tk.Button(self.window, text="Вернуться в главное меню", font=("Courier New", 15), bg="black", fg="red", command=self.window.destroy)
-                self.btn_exit.place(x=370, y=56)
+                self.btn_exit.place(x=870, y=190)
 
 
         self.window.after(15, self.update)
 
     def start_audio(self):
-        if self.audio_file:
-            pygame.mixer.music.load(self.audio_file)
-            pygame.mixer.music.set_volume(0.5)  # Устанавливаем громкость аудио
-            pygame.mixer.music.play()
+        pass  # пустая функция, поскольку аудио отключено
 
     def stop_audio(self):
-        if pygame.mixer.music.get_busy():
-            pygame.mixer.music.stop()
+        pass  # пустая функция, поскольку аудио отключено
 
     def skip_forward(self):
-        # Остановка аудио
+        # Остановка аудио (пустая функция, поскольку аудио отключено)
         self.stop_audio()
         # Пропуск вперёд на 5 секунд
         self.vid.set(cv2.CAP_PROP_POS_FRAMES,
-                     self.vid.get(cv2.CAP_PROP_POS_FRAMES) + self.vid.get(cv2.CAP_PROP_FPS) * 60)
-        # После первого нажатия скрываем кнопку "Пропустить"
+                     self.vid.get(cv2.CAP_PROP_POS_FRAMES) + self.vid.get(cv2.CAP_PROP_FPS) * 70)
+        # "Пропустить"
         self.btn_forward.destroy()
-
-def exit_app(window):
-    if messagebox.askokcancel("Выход", "Вы уверены, что хотите выйти, если вы выйдите, то ваш прогресс скипнется?"):
-        window.destroy()
 
 def win():
     # Создаем новое окно для видеоплеера
@@ -201,9 +201,8 @@ def win():
     win.iconbitmap("pichiii/king.ico")
 
     # Создаем экземпляр видеоплеера и запускаем его
-    player = VideoPlayer(win, video_file="Gttk2.mp4", audio_file="GttK2.mp3")
-    player.start_audio()
-
+    player = VideoPlayer(win, video_file="music&video/Gttk2.mp4")
+    # player.start_audio()
 
 btn_game = tk.Button(root, text="Начать игру", font=("Courier New", 15), bg="black", fg="red", command=win)
 btn_game.place(x=10, y=400)
