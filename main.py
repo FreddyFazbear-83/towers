@@ -9,6 +9,30 @@ import random
 #для видео
 import cv2
 #для аудио
+import pyaudio
+import wave
+import threading
+
+class Music:
+    def play_music(file_path):
+        def play_stream():
+            wf = wave.open(file_path, 'rb')
+            p = pyaudio.PyAudio()
+            stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
+                            channels=wf.getnchannels(),
+                            rate=wf.getframerate(),
+                            output=True)
+            data = wf.readframes(1024)
+            while data != b'':
+                stream.write(data)
+                data = wf.readframes(1024)
+            stream.stop_stream()
+            stream.close()
+            p.terminate()
+        thread = threading.Thread(target=play_stream)
+        thread.daemon = True
+        thread.start()
+Music.play_music("C:/Users/Vika/Pictures/змея/play/большевики_грибоеды_грустная_повседневка.wav")
 
 
 
@@ -32,6 +56,14 @@ def open_new_window():
     new_window.geometry("800x650")
     new_window.resizable(False, False)
     new_window.configure(bg='gray10')
+
+    info_frame = tk.Frame(new_window, width=105, height=105, bg="#FFF")
+    info_frame.place(x=25, y=25)
+
+    # Добавляем фотографию "bo"
+    info_img = ImageTk.PhotoImage(Image.open("pichiii/vk.png"))
+    info_label = tk.Label(info_frame, image=info_img)
+    info_label.place(x=0, y=0)
 
     # Добавляем информации
     text = tk.Text(new_window, wrap="none", font=("Courier New", 13))
