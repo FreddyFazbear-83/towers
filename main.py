@@ -282,7 +282,7 @@ def window():
         global health
         health = 100
         health_label.config(text="ХП: 100")
-        start_game()
+        # start_game()
 
     window = tk.Toplevel(root)
     window.title("Обучение")
