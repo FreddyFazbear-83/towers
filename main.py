@@ -141,7 +141,7 @@ btn_exit = tk.Button(root, text="выход", font=("Courier New", 15), bg="blac
 btn_exit.place(x=10, y=550)
 
 def show_hover_message(event):
-    messagebox.showinfo("Сплывающее сообщение", "Вы навели курсор на кнопку")
+    messagebox.showinfo("Сплывающее сообщение", "У вас не доступена сеть для перехода в интернет")
 
 #__________________________________________________________________________________________________________________
 
@@ -216,7 +216,8 @@ class VideoPlayer:
             self.canvas.delete("all")
             # После завершения видео добавляем кнопку выхода
             if not hasattr(self, 'btn_exit'):
-                self.btn_exit = tk.Button(self.window, text="Вернуться в главное меню", font=("Courier New", 15), bg="black", fg="red", command=self.window.destroy)
+                self.btn_exit = tk.Button(self.window, text="Вернуться в главное меню",
+                                          font=("Courier New", 15), bg="black", fg="red", command=self.window.destroy)
                 self.btn_exit.place(x=870, y=190)
 
 
