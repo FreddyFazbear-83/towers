@@ -42,7 +42,7 @@ root.resizable(False, False)
 root.iconbitmap("pichiii/king.ico")
 
 # Задаем фоновое изображение
-background_img = ImageTk.PhotoImage(Image.open("pichiii/zam02.jpg"))
+background_img = ImageTk.PhotoImage(Image.open("pichiii/zam01.jpg"))
 background_label = tk.Label(root, image=background_img)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
