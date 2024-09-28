@@ -13,6 +13,7 @@ import pyaudio
 import wave
 import threading
 
+
 class Music:
     def play_music(file_path):
         def play_stream():
@@ -32,18 +33,16 @@ class Music:
         thread = threading.Thread(target=play_stream)
         thread.daemon = True
         thread.start()
-Music.play_music("C:/Users/Vika/Pictures/змея/play/большевики_грибоеды_грустная_повседневка.wav")
-
-
+Music.play_music("C:/Users/Vika/Documents/GitHub/towers/playy/большевики_грибоеды_грустная_повседневка.wav")
 
 root = tk.Tk()
-root.title("Glary to the king")
+root.title("Стреляющие башни")
 root.geometry("800x600")
 root.resizable(False, False)
 root.iconbitmap("pichiii/king.ico")
 
 # Задаем фоновое изображение
-background_img = ImageTk.PhotoImage(Image.open("pichiii/zam01.jpg"))
+background_img = ImageTk.PhotoImage(Image.open("pichiii/zam02.jpg"))
 background_label = tk.Label(root, image=background_img)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
@@ -53,17 +52,9 @@ def open_new_window():
     new_window = tk.Toplevel(root)
     new_window.title("Правила игры")
     new_window.iconbitmap("pichiii/king.ico")
-    new_window.geometry("800x650")
+    new_window.geometry("850x650")
     new_window.resizable(False, False)
-    new_window.configure(bg='gray10')
-
-    info_frame = tk.Frame(new_window, width=105, height=105, bg="#FFF")
-    info_frame.place(x=25, y=25)
-
-    # Добавляем фотографию "bo"
-    info_img = ImageTk.PhotoImage(Image.open("pichiii/vk.png"))
-    info_label = tk.Label(info_frame, image=info_img)
-    info_label.place(x=0, y=0)
+    new_window.configure(bg='red')
 
     # Добавляем информации
     text = tk.Text(new_window, wrap="none", font=("Courier New", 13))
@@ -74,7 +65,7 @@ def open_new_window():
         Целью игры является защита собственной базы. Для тебя игрок, есть 
     возможность размещать свои башни, которые способствуют обороне против врагов. 
     Существует только одна локация с существующим маршрутом прохода ботов. 
-    Атакующая сторона начинает идти слева направо по определённо отложенному пути. 
+    Атакующая сторона начинает идти справа налево по определённо отложенному пути. 
     Боты доходят до конца маршрута и наносят урон базы игрока. 
 
         Для твоей победы необходимо не допускать монстров-ботов до 
@@ -84,36 +75,32 @@ def open_new_window():
         Чтобы начать игру необходимо нажать на кнопку «новая игра». 
     После игры внизу есть иконки, которые образуют собой панель управления, где 
     можно начать заново, выйти из игры или поставить на паузу.
-
+    
+    
         Подробнее:
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        нянянянянянянянянянянянянянянянянянянянянянянянянянянянянхуйяняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
-        няняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняняня
+        На игровом поле для Вас предвставлены различные кнопочки. 
+        - "стрелочка указывающая влево" -- означает что это выход из игры, но если
+    Вы находитесь в режиме "Новая игра", тогда происходит полный выход из игры.
+        - "круговая стрелочка" -- начинает игру заново.
+        - "замок с зелёным плюсом" -- с помощью этой кнопки Вам возможна покупка 
+    башни.(их стоимость 500 монет)
+    !НО помните, они могут выстрелить лишь 10 раз, после ломаются!
+        - "монетки" - начисляются вам за побеждённых врагов.  
+        - "знак черепа" - это главный счётчик Ваших побед.
+        
+        
+        Вам будет интересно:
+        Эта игра является пробноким будущего проекта. Цельный контент будет 
+    доступен после полной реализиции данного продукта. 
+        Сюжет лежит мир иной вселеной, где после некого инцидента привычный мир 
+    стал другим. Появились некие существа, похожие на зверо-людей, которые были 
+    против человечесва. Их целью была лишь злоба и угнетение всего живого.  
+    Учавствуя в сражениях и решая загадки, Вы узнаёте тайны этого мира и помогаете 
+    спасти свой народ. 
+    
+      
+
+        
         """ )
     text.tag_config("red", foreground="red")
     text.tag_config("gray_background", background="gray9")
@@ -121,7 +108,6 @@ def open_new_window():
     text.tag_add("red", "1.0", "end")
     text.tag_add("gray_background", "1.0", "end")
 
-    # Добавляем полосы прокрутки
     scrollbar = tk.Scrollbar(new_window, command=text.yview)
     scrollbar.pack(side="right", fill="y")
     text['yscrollcommand'] = scrollbar.set
@@ -152,7 +138,6 @@ def open_telegram():
 def open_vk():
     webbrowser.open('https://vk.com/betonoomeshalka')
 
-
 def open_tgk():
     webbrowser.open('https://t.me/+GLomJd_lv8wzMmVi')
 
@@ -169,7 +154,6 @@ small_vk_icon = vk_icon.subsample(10, 10)  # уменьшение размера
 vk_button = tk.Button(root, image=small_vk_icon, command=open_vk)
 vk_button.pack(side='right', anchor='se', padx=0, pady=0)  # установка в правый нижний угол
 vk_button.bind("<Enter>", show_hover_message)
-
 
 tgk_icon = tk.PhotoImage(file='pichiii/group.png')
 small_tgk_icon = tgk_icon.subsample(10, 10)  # уменьшение размера в два раза
@@ -198,144 +182,104 @@ class VideoPlayer:
         self.canvas = tk.Canvas(window, width=self.vid.get(cv2.CAP_PROP_FRAME_WIDTH),
                                 height=self.vid.get(cv2.CAP_PROP_FRAME_HEIGHT))
         self.canvas.pack()
+        self.audio_file = audio_file
+        if self.audio_file is not None:
+            self.audio_thread = threading.Thread(target=self.play_audio)
+            self.audio_thread.daemon = True
+            self.audio_thread.start()
 
-        # Добавляем кнопки управления
         self.btn_forward = tk.Button(self.window, text="          Пропустить          ", font=("Courier New", 15), bg="black", fg="red", command=self.skip_forward)
         self.btn_forward.place(x=1065, y=25)
 
         self.update()
 
     def update(self):
-        ret, frame = self.vid.read()
+        try:
+            ret, frame = self.vid.read()
 
-        if ret:
-            self.photo = ImageTk.PhotoImage(image=Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)))
-            self.canvas.create_image(0, 0, image=self.photo, anchor=tk.NW)
-        else:
-            # Если достигнут конец видео, оставляем экран пустым
-            self.canvas.delete("all")
-            # После завершения видео добавляем кнопку выхода
-            if not hasattr(self, 'btn_exit'):
-                self.btn_exit = tk.Button(self.window, text="Вернуться в главное меню",
-                                          font=("Courier New", 15), bg="black", fg="red", command=self.window.destroy)
-                self.btn_exit.place(x=870, y=190)
+            if ret:
+                self.photo = ImageTk.PhotoImage(image=Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)))
+                self.canvas.create_image(0, 0, image=self.photo, anchor=tk.NW)
+            else:
+                self.canvas.delete("all")
+                if not hasattr(self, 'btn_exit'):
+                    self.btn_exit = tk.Button(self.window, text="Вернуться в главное меню",
+                                              font=("Courier New", 15), bg="black", fg="red",
+                                              command=self.window.destroy)
+                    self.btn_exit.place(x=870, y=190)
 
+            self.window.after(15, self.update)
+        except Exception as e:
+            print(f"Произошла ошибка: {e}")
 
-        self.window.after(15, self.update)
+    def play_audio(self):
+        wf = wave.open(self.audio_file, 'rb')
+        p = pyaudio.PyAudio()
 
-    def start_audio(self):
-        pass  # пустая функция, поскольку аудио отключено
+        self.stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
+                             channels=wf.getnchannels(),
+                             rate=wf.getframerate(),
+                             output=True)
+        data = wf.readframes(1024)
+        while data != b'' and self.stream.is_active():
+            self.stream.write(data)
+            data = wf.readframes(1024)
+
+        self.stream.stop_stream()
+        self.stream.close()
+        p.terminate()
 
     def stop_audio(self):
-        pass  # пустая функция, поскольку аудио отключено
+        if hasattr(self, 'stream') and self.stream.is_active():
+            self.stream.stop_stream()
+            self.stream.close()
+            p = pyaudio.PyAudio()
+            p.terminate()
+
+    def run_file(self):
+        try:
+            subprocess.Popen(["python", "playy/main.py"])
+        except Exception as e:
+            print(f"Ошибка при запуске внешнего файла: {e}")
 
     def skip_forward(self):
-        # Остановка аудио (пустая функция, поскольку аудио отключено)
         self.stop_audio()
-        # Пропуск вперёд на 5 секунд
+        frame_jump = self.vid.get(cv2.CAP_PROP_FPS) * 5
         self.vid.set(cv2.CAP_PROP_POS_FRAMES,
-                     self.vid.get(cv2.CAP_PROP_POS_FRAMES) + self.vid.get(cv2.CAP_PROP_FPS) * 70)
-        # "Пропустить"
-        self.btn_forward.destroy()
+                     self.vid.get(cv2.CAP_PROP_POS_FRAMES) + frame_jump)
+        self.run_file()
+        import os
+        os._exit(0)
+
 
 def win():
-    # Создаем новое окно для видеоплеера
     win = tk.Toplevel(root)
-    win.title("GttK")
-    #win.geometry("1500x850")
+    win.title("Стреляющие башни")
     win.attributes('-fullscreen', True)
     win.resizable(False, False)
     win.iconbitmap("pichiii/king.ico")
 
-    # Создаем экземпляр видеоплеера и запускаем его
-    player = VideoPlayer(win, video_file="music&video/Gttk2.mp4")
-    # player.start_audio()
+    player = VideoPlayer(win, video_file="music&video/gttk2.mp4", audio_file="music&video/GttK.wav")
 
-btn_game = tk.Button(root, text="Начать игру", font=("Courier New", 15), bg="black", fg="red", command=win)
-btn_game.place(x=10, y=400)
+btn_game = tk.Button(root, text="Сюжетный видеофрагмент", font=("Courier New", 15), bg="black", fg="red", command=win)
+btn_game.place(x=10, y=350)
 
 
 #______________________________________________________________________________________________________________________
-def window():
-    def remove_enemy(player):
-        global health
-        x1, y1, x2, y2 = canvas.coords(player)
-        for enemy in enemies:
-            ex1, ey1, ex2, ey2 = canvas.coords(enemy)
-            if x1 <= ex2 + 10 and x2 >= ex1 - 10 and y1 <= ey2 + 10 and y2 >= ey1 - 10:
-                canvas.delete(enemy)
-                enemies.remove(enemy)
-                health -= 10
-                health_label.config(text=f"ХП: {health}")
-                if health <= 0:
-                    end_game()
+import subprocess
+import os
+def run_second_file():
+    subprocess.run(["python", "playy/main.py"])
+    os._exit(0)
 
-    def end_game():
-        health_label.config(text="Игра закончена, вы проиграли")
-        for button in buttons:
-            button.place_forget()
-        restart_button = tk.Button(window, text="Хотите повторить?", font=("Helvetica", 16), command=restart_game)
-        restart_button.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+btn_education = tk.Button(root, text="Обучение: Волна 1", font=("Courier New", 10), bg="black", fg="red",command=run_second_file)
+btn_education.place(x=10, y=400)
+#__________________________________________
+def run_second_file2():
+    subprocess.run(["python", "play2/main.py"])
+    os._exit(0)
 
-    def restart_game():
-        canvas.delete("all")
-        global health
-        health = 100
-        health_label.config(text="ХП: 100")
-        # start_game()
-
-    window = tk.Toplevel(root)
-    window.title("Обучение")
-    window.iconbitmap("pichiii/king.ico")
-    window.geometry("800x650")
-    window.resizable(False, False)
-
-    canvas = tk.Canvas(window, width=800, height=600, bg="black")
-    canvas.pack()
-
-    background_image = ImageTk.PhotoImage(Image.open("pichiii/root.png"))
-    canvas.create_image(0, 0, anchor=tk.NW, image=background_image)
-
-    health_label = tk.Label(window, text="ХП: 100", font=("Helvetica", 16), bg="white")
-    health_label.place(x=10, y=10)
-
-    players = []
-    buttons = []
-    enemies = []
-
-    for i in range(3):
-        player = canvas.create_rectangle(50, 100*i + 100, 100, 100*i + 150, fill="green")
-        players.append(player)
-        button = tk.Button(window, text="Удалить врага", font=("Helvetica", 12), command=lambda p=player: remove_enemy(p))
-        button.place(x=150, y=100*i + 125)
-        buttons.append(button)
-
-    def move_enemies():
-        for enemy in enemies:
-            canvas.move(enemy, -3, 0)
-            ex1, ey1, ex2, ey2 = canvas.coords(enemy)
-            for player in players:
-                px1, py1, px2, py2 = canvas.coords(player)
-                if px1 <= ex2 and px2 >= ex1 and py1 <= ey2 and py2 >= ey1:
-                    health -= 1
-                    health_label.config(text=f"ХП: {health}")
-                    if health <= 0:
-                        end_game()
-
-            if ex1 <= 0:
-                canvas.move(enemy, 800, 0)
-
-        window.after(30, move_enemies)
-
-    def spawn_enemy():
-        enemy = canvas.create_rectangle(800, random.randint(50, 550), 850, random.randint(100, 500), fill="purple")
-        enemies.append(enemy)
-        window.after(2000, spawn_enemy)
-
-    spawn_enemy()
-    move_enemies()
-
-btn_education = tk.Button(root, text="Обучение", font=("Courier New", 15), bg="black", fg="red",command=window)
+btn_education = tk.Button(root, text="Обучение: Волна 2", font=("Courier New", 10), bg="black", fg="red",command=run_second_file2)
 btn_education.place(x=10, y=448)
 
 root.mainloop()
